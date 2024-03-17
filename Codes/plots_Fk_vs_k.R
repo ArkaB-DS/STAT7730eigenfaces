@@ -1,5 +1,5 @@
 # Plots of F(k) vs k
-pdf("Plot_of_Fk_v_k.pdf", height = 8, width = 10)
+pdf("./Plots/Plot_of_Fk_v_k.pdf", height = 8, width = 10)
 
 plot(PCA_as_a_function_of_k, type="o", col = 'red', xlab = 'k', ylab = 'F(k)',
      main = 'Variation of F(k) versus k', lwd=2)

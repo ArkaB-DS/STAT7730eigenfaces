@@ -1,6 +1,6 @@
 ### Example Plots
 
-pdf("eigenfaces_plot.pdf", width = 8, height = 8)
+pdf("./Plots/eigenfaces_plot.pdf", width = 8, height = 8)
 
 library(reshape2)
 
