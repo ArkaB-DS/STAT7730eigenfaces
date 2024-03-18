@@ -15,8 +15,9 @@ for (k in 1:40) {
     I1_FDA <- crossprod(U1_FDA, I_FDA)
     true_index_FDA <- Index[random_idx_FDA]
     predicted_idx_FDA <- classifier(Y1_FDA, I1_FDA)
-    if (ceiling(predicted_idx_FDA/5) == ceiling(true_index_FDA/5))
+    if (ceiling(predicted_idx_FDA/5) == ceiling(true_index_FDA/5)){
       counter_FDA <- counter_FDA + 1
+    }
   }
  FDA_as_a_function_of_k[k] <- counter_FDA / 1000*100
 }

@@ -1,5 +1,4 @@
-svd_Ytrain <- svd(Ytrain)
-U <- svd_Ytrain$u
+U <- svd(Ytrain)$u
 
 Index <- classifier(Ytrain, Ytest)
 
