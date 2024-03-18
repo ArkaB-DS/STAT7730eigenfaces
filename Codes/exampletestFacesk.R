@@ -17,20 +17,20 @@ for(k in random_ks){
   U1_PCA <- U[, 1:k]
   Y1_PCA <- crossprod(U1_PCA, Ytrain)
   I1_PCA <- crossprod(U1_PCA, I_)
-  predicted_idx_PCA[counter] <- classifier(Y1_PCA, I1_PCA)
+  predicted_idx_PCA[counter] <- nearest_neighbour_identifier(Y1_PCA, I1_PCA)
   PCA_recognition[counter] <- (ceiling(predicted_idx_PCA[counter]/5) == ceiling(true/5))
   #FDA
   V1_FDA <- V[, 1:k]
   U1_FDA <- U0 %*% V1_FDA
   Y1_FDA <- crossprod(U1_FDA, Ytrain)
   I1_FDA <- crossprod(U1_FDA, I_)
-  predicted_idx_FDA[counter] <- classifier(Y1_FDA, I1_FDA)
+  predicted_idx_FDA[counter] <- nearest_neighbour_identifier(Y1_FDA, I1_FDA)
   FDA_recognition[counter] <- (ceiling(predicted_idx_FDA[counter]/5) == ceiling(true/5))
   #SP
   U1_SP <- U_SP[, 1:k]
   Y1_SP <- crossprod(U1_SP, Ytrain)
   I1_SP <- crossprod(U1_SP, I_)
-  predicted_idx_SP[counter] <- classifier(Y1_SP, I1_SP)
+  predicted_idx_SP[counter] <- nearest_neighbour_identifier(Y1_SP, I1_SP)
   SP_recognition[counter] <- (ceiling(predicted_idx_SP[counter]/5) == ceiling(true/5))
   counter <- counter + 1
   }

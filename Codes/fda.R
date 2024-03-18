@@ -1,21 +1,21 @@
 # helper function used in FeatExtractClassify_FDA.R
 
-lda <- function(X) {
-  muj <- matrix(0, nrow = 100, ncol = 40)
+fda <- function(X) {
+  xjbar <- matrix(0, nrow = 100, ncol = 40)
   for (i in 1:100) {
     for (j in 1:40) {
-      muj[i, j] <- mean(X[i, ((j - 1) * 5 + 1):(j * 5)])
+      xjbar[i, j] <- mean(X[i, ((j - 1) * 5 + 1):(j * 5)])
     }
   }
   
-  mu <- apply(muj, 1, mean)
+  xbar <- apply(xjbar, 1, mean)
   
   SB <- matrix(0, nrow =100, ncol = 100)
   SW <- matrix(0, nrow = 100, ncol = 100)
   for (j in 1:40) {
-    SB <- SB + tcrossprod(muj[, j] - mu)
+    SB <- SB + tcrossprod(xjbar[, j] - xbar)
     for (i in 1:5) {
-      SW <- SW + tcrossprod(X[, i] - muj[, j])
+      SW <- SW + tcrossprod(X[, i] - xjbar[, j])
     }
   }
   
@@ -25,8 +25,8 @@ lda <- function(X) {
   lambda <- eig_result$values
   V <- eig_result$vectors
   
-  idx <- order(lambda, decreasing = TRUE)
-  V <- V[, idx]
+  ordered_index <- order(lambda, decreasing = TRUE)
+  V <- V[, ordered_index]
   
   return(V)
 }

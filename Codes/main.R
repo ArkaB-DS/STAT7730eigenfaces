@@ -1,6 +1,6 @@
 source("./Codes/loadData.R")
-source("./Codes/classifier.R")
-source("./Codes/lda.R")
+source("./Codes/labeller.R")
+source("./Codes/fda.R")
 source("./Codes/exampleFaces.R")
 source("./Codes/FeatExtractClassify_PCA.R")
 source("./Codes/FeatExtractClassify_FDA.R")

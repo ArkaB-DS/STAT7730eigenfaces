@@ -2,7 +2,7 @@ pdf("./Plots/eigenfaces_plot.pdf", width = 8, height = 8)
 
 library(reshape2)
 
-Index <- classifier(Ytrain, Ytest)  
+Index <- nearest_neighbour_identifier(Ytrain, Ytest)  
 
 set.seed(3)
 three_random_indices <- sample(1:200, 3)

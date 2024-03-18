@@ -9,7 +9,7 @@ for (k in 1:40) {
     I_SP <- Ytest[, random_idx_SP]
     I1_SP <- crossprod(U1_SP, I_SP)
     true_index_SP <- Index[random_idx_SP]
-    predicted_idx_SP <- classifier(Y1_SP, I1_SP)
+    predicted_idx_SP <- nearest_neighbour_identifier(Y1_SP, I1_SP)
     if (ceiling(predicted_idx_SP/5) == ceiling(true_index_SP/5)) {
       counter_SP <- counter_SP + 1
     }

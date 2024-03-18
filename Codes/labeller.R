@@ -1,6 +1,6 @@
 # helper function used in FeatExtractClassify_PCA.R
 
-classifier <- function(Ytr, Yts) {
+nearest_neighbour_identifier <- function(Ytr, Yts) {
   m <- ncol(Ytr)
   n <- ncol(Yts)
   
