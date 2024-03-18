@@ -13,8 +13,9 @@ for (k in 1:40) {
     I1_PCA <- crossprod(U1_PCA, I_PCA)
     true_index_PCA <- Index[random_idx_PCA]
     predicted_idx_PCA <- classifier(Y1_PCA, I1_PCA)
-    if (ceiling(predicted_idx_PCA/5) == ceiling(true_index_PCA/5))
+    if (ceiling(predicted_idx_PCA/5) == ceiling(true_index_PCA/5)){
       counter_PCA <- counter_PCA + 1
+    }
   }
   PCA_as_a_function_of_k[k] <- counter_PCA / 1000*100
 }
